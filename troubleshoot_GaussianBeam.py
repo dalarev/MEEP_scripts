@@ -48,7 +48,7 @@ sim = mp.Simulation(
 
 # add DFT monitor: XY Source
 vol = mp.Volume(
-    center=mp.Vector3(z=-cell_size.z/2 + dpml),
+    center=mp.Vector3(z=-cell_size.z/2 + dpml + 0.5),
     size=mp.Vector3(sx, sy)
 )
 dft_obj1 = sim.add_dft_fields([pol], 1 / wvl, 0, 1, where=vol)
